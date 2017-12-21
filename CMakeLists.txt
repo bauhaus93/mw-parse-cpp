@@ -27,14 +27,16 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 endif()
 
 
-set_property(TARGET mw_parse PROPERTY CXX_STANDARD 14)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LINK_FLAGS}")
 
 add_executable(mw_parse "")
 
+
 add_subdirectory(src)
 
+set_property(TARGET mw_parse PROPERTY CXX_STANDARD 14)
 get_property(SRCS TARGET mw_parse PROPERTY SRC_LIST)
 target_sources(mw_parse PRIVATE ${SRCS})
 
