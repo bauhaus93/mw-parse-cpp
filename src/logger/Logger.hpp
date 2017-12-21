@@ -1,21 +1,14 @@
 /* Copyright 2017 Jakob Fischer <JakobFischer93@gmail.com> */
+
 #pragma once
 
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 
+#include "LogLevel.hpp"
+
 namespace MWParse::Log {
-
-enum class LogLevel {
-    TRACE = 0,
-    DEBUG = 1,
-    INFO = 2,
-    WARN = 3,
-    ERROR = 4
-};
-
-
 
 class Logger {
  public:

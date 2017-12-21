@@ -1,4 +1,5 @@
 /* Copyright 2017 Jakob Fischer <JakobFischer93@gmail.com> */
+
 #include "Logger.hpp"
 
 namespace MWParse::Log {

@@ -1,30 +1,52 @@
 /* Copyright 2017 Jakob Fischer <JakobFischer93@gmail.com> */
+
 #pragma once
 
 #include <iostream>
 #include <memory>
 
 #include "Logger.hpp"
+#include "LogLevel.hpp"
 #include "LoggerException.hpp"
-
-/*TRACE = 0,
-DEBUG = 1,
-INFO = 2,
-WARN = 3,
-ERROR = 4*/
 
 namespace MWParse::Log {
 
-#define LOG_LEVEL LogLevel::INFO
-
-// #ifdef LOG_LEVEL_INFO
-
-
-// #endif
-
-bool CreateGlobalLogger(std::ostream& output);
+void CreateGlobalLogger(std::ostream& output);
 Logger& GetGlobalLogger();
-bool DestroyGlobalLogger();
+void DestroyGlobalLogger();
 
+#define LOG_LEVEL INFO
+
+#if LOG_LEVEL == TRACE
+#define TRACE(args...) MWParse::Log::GetGlobalLogger().Trace(args)
+#define DEBUG(args...) MWParse::Log::GetGlobalLogger().Debug(args)
+#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
+#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
+#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#elif LOG_LEVEL == DEBUG
+#define TRACE(args...)
+#define DEBUG(args...) MWParse::Log::GetGlobalLogger().Debug(args)
+#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
+#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
+#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#elif LOG_LEVEL == INFO
+#define TRACE(args...)
+#define DEBUG(args...)
+#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
+#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
+#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#elif LOG_LEVEL == WARN
+#define TRACE(args...)
+#define DEBUG(args...)
+#define INFO(args...)
+#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
+#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#elif LOG_LEVEL == ERROR
+#define TRACE(args...)
+#define DEBUG(args...)
+#define INFO(args...)
+#define ERROR(args...)
+#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#endif
 
 }   // namespace MWParse::Log
