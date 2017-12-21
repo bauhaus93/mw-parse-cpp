@@ -1,3 +1,4 @@
+/* Copyright 2017 Jakob Fischer <JakobFischer93@gmail.com> */
 #include "Logger.hpp"
 
 namespace MWParse::Log {
@@ -27,11 +28,6 @@ int GetLogLevelIndex(LogLevel logLevel) {
 Logger::Logger(std::ostream& out_, LogLevel logLevel_) :
     out { out_ },
     logLevel { logLevel } {
-
 }
 
-
-
-
-
-}
+}   // namespace MWParse::Log
