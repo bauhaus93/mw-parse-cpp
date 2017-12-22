@@ -28,7 +28,7 @@ int GetLogLevelIndex(LogLevel logLevel) {
 
 Logger::Logger(std::ostream& out_, LogLevel logLevel_) :
     out { out_ },
-    logLevel { logLevel } {
+    logLevel { logLevel_ } {
 }
 
 }   // namespace MWParse::Log

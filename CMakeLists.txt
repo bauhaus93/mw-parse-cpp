@@ -20,7 +20,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 	set(LINK_FLAGS "-Wall -fmax-errors=1 -ggdb -Werror -ldl")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 		set(COMPILE_FLAGS "-Wall -ferror-limit=1 -Werror")
-		set(LINK_FLAGS "-Wall -ferror-limit=1 - Werror")
+		set(LINK_FLAGS "-Wall -ferror-limit=1 -Werror")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 	set(COMPILE_FLAGS "/W4 /MP")
 	set(LINK_FLAGS "/NODEFAULTLIB:msvcrtd.lib")
@@ -36,7 +36,7 @@ add_executable(mw_parse "")
 
 add_subdirectory(src)
 
-set_property(TARGET mw_parse PROPERTY CXX_STANDARD 14)
+set_property(TARGET mw_parse PROPERTY CXX_STANDARD 17)
 get_property(SRCS TARGET mw_parse PROPERTY SRC_LIST)
 target_sources(mw_parse PRIVATE ${SRCS})
 
