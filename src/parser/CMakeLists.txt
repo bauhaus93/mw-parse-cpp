@@ -1,2 +1,4 @@
-add_sources(  
+add_sources(
+    ESMParser.cpp
+    ParseException.cpp  
 )

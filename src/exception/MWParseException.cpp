@@ -34,4 +34,9 @@ MWParseException::MWParseException(
         std::make_unique<std::exception>(cause_)} {
 }
 
+
+std::ostream& operator<<(std::ostream os, const MWParseException& e) {
+    return os << e.what();
+}
+
 }   // namespace mwparse::exception 

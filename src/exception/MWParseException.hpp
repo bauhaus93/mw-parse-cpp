@@ -3,6 +3,7 @@
 #pragma once
 
 #include <exception>
+#include <iostream>
 #include <sstream>
 #include <memory>
 #include <string>
@@ -10,8 +11,13 @@
 namespace mwparse::exception {
 
 class MWParseException : public std::exception {
+ private:
     std::string msg;
     std::unique_ptr<std::exception> cause;
+
+    friend std::ostream&        operator<<(std::ostream& os, 
+                                           const MWParseException& e);
+
 
  protected:
                         MWParseException(
@@ -28,6 +34,7 @@ class MWParseException : public std::exception {
                             const std::string& function,
                             const std::string& description,
                             const std::exception& cause_);
+
 
     const char* what() const throw(){ return msg.c_str(); }
 };
