@@ -9,7 +9,7 @@
 #include "LogLevel.hpp"
 #include "LoggerException.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 void CreateGlobalLogger(std::ostream& output);
 Logger& GetGlobalLogger();
@@ -18,35 +18,35 @@ void DestroyGlobalLogger();
 #define LOG_LEVEL INFO
 
 #if LOG_LEVEL == TRACE
-#define TRACE(args...) MWParse::Log::GetGlobalLogger().Trace(args)
-#define DEBUG(args...) MWParse::Log::GetGlobalLogger().Debug(args)
-#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
-#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
-#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#define TRACE(args...) mwparse::log::GetGlobalLogger().Trace(args)
+#define DEBUG(args...) mwparse::log::GetGlobalLogger().Debug(args)
+#define INFO(args...) mwparse::log::GetGlobalLogger().Info(args)
+#define ERROR(args...) mwparse::log::GetGlobalLogger().Error(args)
+#define WARN(args...) mwparse::log::GetGlobalLogger().Warn(args)
 #elif LOG_LEVEL == DEBUG
 #define TRACE(args...)
-#define DEBUG(args...) MWParse::Log::GetGlobalLogger().Debug(args)
-#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
-#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
-#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#define DEBUG(args...) mwparse::log::GetGlobalLogger().Debug(args)
+#define INFO(args...) mwparse::log::GetGlobalLogger().Info(args)
+#define ERROR(args...) mwparse::log::GetGlobalLogger().Error(args)
+#define WARN(args...) mwparse::log::GetGlobalLogger().Warn(args)
 #elif LOG_LEVEL == INFO
 #define TRACE(args...)
 #define DEBUG(args...)
-#define INFO(args...) MWParse::Log::GetGlobalLogger().Info(args)
-#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
-#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#define INFO(args...) mwparse::log::GetGlobalLogger().Info(args)
+#define ERROR(args...) mwparse::log::GetGlobalLogger().Error(args)
+#define WARN(args...) mwparse::log::GetGlobalLogger().Warn(args)
 #elif LOG_LEVEL == WARN
 #define TRACE(args...)
 #define DEBUG(args...)
 #define INFO(args...)
-#define ERROR(args...) MWParse::Log::GetGlobalLogger().Error(args)
-#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#define ERROR(args...) mwparse::log::GetGlobalLogger().Error(args)
+#define WARN(args...) mwparse::log::GetGlobalLogger().Warn(args)
 #elif LOG_LEVEL == ERROR
 #define TRACE(args...)
 #define DEBUG(args...)
 #define INFO(args...)
 #define ERROR(args...)
-#define WARN(args...) MWParse::Log::GetGlobalLogger().Warn(args)
+#define WARN(args...) mwparse::log::GetGlobalLogger().Warn(args)
 #endif
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log

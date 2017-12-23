@@ -2,7 +2,7 @@
 
 #include "LoggerException.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 LoggerException::LoggerException(
     const std::string& function,
@@ -13,4 +13,4 @@ LoggerException::LoggerException(
                         nullptr } {
 }
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log

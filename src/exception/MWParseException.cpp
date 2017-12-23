@@ -2,7 +2,7 @@
 
 #include "MWParseException.hpp"
 
-namespace MWParse::Exception {
+namespace mwparse::exception {
 
 MWParseException::MWParseException(
         const std::string& error,
@@ -34,4 +34,4 @@ MWParseException::MWParseException(
         std::make_unique<std::exception>(cause_)} {
 }
 
-}   // namespace MWParse::Exception
+}   // namespace mwparse::exception 

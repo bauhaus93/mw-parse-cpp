@@ -2,7 +2,7 @@
 
 #include "Logger.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 const char* GetLogLevelString(LogLevel logLevel) {
     switch (logLevel) {
@@ -31,4 +31,4 @@ Logger::Logger(std::ostream& out_, LogLevel logLevel_) :
     logLevel { logLevel_ } {
 }
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log

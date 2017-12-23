@@ -6,8 +6,8 @@
 #include "logger/GlobalLogger.hpp"
 
 int main(int argc, char** argv) {
-    MWParse::Log::CreateGlobalLogger(std::cout);
-
-    MWParse::Log::DestroyGlobalLogger();
+    mwparse::log::CreateGlobalLogger(std::cout);
+    INFO("SERS");
+    mwparse::log::DestroyGlobalLogger();
     return 0;
 }

@@ -2,7 +2,7 @@
 
 #include "GlobalLogger.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 std::unique_ptr<Logger> g_logger = nullptr;
 
@@ -33,4 +33,4 @@ void DestroyGlobalLogger() {
     }
 }
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log

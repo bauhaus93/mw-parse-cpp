@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 enum class LogLevel {
     TRACE = 0,
@@ -12,4 +12,4 @@ enum class LogLevel {
     ERROR = 4
 };
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log

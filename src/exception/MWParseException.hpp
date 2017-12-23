@@ -7,7 +7,7 @@
 #include <memory>
 #include <string>
 
-namespace MWParse::Exception {
+namespace mwparse::exception {
 
 class MWParseException : public std::exception {
     std::string msg;
@@ -32,4 +32,4 @@ class MWParseException : public std::exception {
     const char* what() const throw(){ return msg.c_str(); }
 };
 
-}   // namespace MWParse::Exception
+}   // namespace mwparse::exception

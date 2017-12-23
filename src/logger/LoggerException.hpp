@@ -7,12 +7,12 @@
 
 #include "exception/MWParseException.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
-class LoggerException : public Exception::MWParseException {
+class LoggerException : public exception::MWParseException {
  public:
     LoggerException(const std::string& function,
                     const std::string& description);
 };
 
-}  // namespace MWParse::Log
+}  // namespace mwparse::log

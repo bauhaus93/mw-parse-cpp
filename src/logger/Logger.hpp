@@ -8,7 +8,7 @@
 
 #include "LogLevel.hpp"
 
-namespace MWParse::Log {
+namespace mwparse::log {
 
 class Logger {
  public:
@@ -78,8 +78,8 @@ void Logger::Write(LogLevel msgLevel, T value, Args... args) {
     std::time_t t = std::time(nullptr);
     std::tm tm = *std::localtime(&t);
 
-    out << std::put_time(&tm, "[%T] - ")
-        << GetLogLevelString(msgLevel) << ": " << value;
+    out << std::put_time(&tm, "[%T] ")
+        << GetLogLevelString(msgLevel) << " - " << value;
     WriteAppend(args...);
 }
 
@@ -88,8 +88,8 @@ void Logger::Write(LogLevel msgLevel, T value) {
     std::time_t t = std::time(nullptr);
     std::tm tm = *std::localtime(&t);
 
-    out << std::put_time(&tm, "[%T] - ")
-        << GetLogLevelString(msgLevel) << ": " << value << "\n";
+    out << std::put_time(&tm, "[%T] ")
+        << GetLogLevelString(msgLevel) << " - " << value << "\n";
 }
 
 template<typename T, typename... Args>
@@ -104,4 +104,4 @@ void Logger::WriteAppend(T value) {
 }
 
 
-}   // namespace MWParse::Log
+}   // namespace mwparse::log
