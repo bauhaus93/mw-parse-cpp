@@ -10,8 +10,16 @@ ParseException::ParseException(const std::string& function,
                                const std::string& description):
     MWParseException { "ParseException",
                        function,
+                       description } {
+}
+
+ParseException::ParseException(const std::string& function,
+                               const std::string& description,
+                               const std::exception& cause):
+    MWParseException { "ParseException",
+                       function,
                        description,
-                       nullptr } {
+                       cause } {
 }
 
 

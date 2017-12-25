@@ -7,6 +7,8 @@
 #include <string>
 
 #include "ParseException.hpp"
+#include "Record.hpp"
+#include "logger/GlobalLogger.hpp"
 
 namespace mwparse::parser {
 
@@ -15,6 +17,7 @@ class ESMParser {
  public:  
 
                         ESMParser(const std::string& filename);
+    void                Parse();
 
  private:
     std::ifstream       file;

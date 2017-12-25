@@ -3,6 +3,7 @@
 #pragma once
 
 #include <string>
+#include <exception>
 
 #include "exception/MWParseException.hpp"
 
@@ -14,6 +15,9 @@ class ParseException: public exception::MWParseException {
         ParseException(const std::string& function,
                        const std::string& description);
 
+        ParseException(const std::string& function,
+                       const std::string& description,
+                       const std::exception& cause);
 
  private:
 

@@ -1,7 +1,6 @@
 /* Copyright 2017 Jakob Fischer <JakobFischer93@gmail.com> */
 
 #include "ESMParser.hpp"
-#include "logger/GlobalLogger.hpp"
 
 namespace mwparse::parser {
 
@@ -14,7 +13,27 @@ ESMParser::ESMParser(const std::string& filename) :
         throw ParseException("ESMParser::ESMParser", "Could not open file: " + filename);
     }
 
+    file.exceptions(std::ios_base::failbit | std::ios_base::badbit);
+
 }
+
+
+
+void ESMParser::Parse() {
+
+    while (true) {
+        try {
+            Record record { file };
+        }
+        catch (const ParseException& e) {
+            ERROR(e.what());
+            break;
+        }
+    }
+
+
+}
+
 
 
 

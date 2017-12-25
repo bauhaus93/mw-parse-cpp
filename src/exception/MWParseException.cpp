@@ -8,30 +8,37 @@ MWParseException::MWParseException(
         const std::string& error,
         const std::string& function,
         const std::string& description,
-        std::unique_ptr<std::exception> cause_):
-        cause { std::move(cause_) } {
+        const std::exception& cause) {
     std::stringstream s;
     s << error << " @ " << function << ": " << description;
-    if (cause != nullptr) {
-        s << ", cause: " << cause->what();
-    }
+    s << ", cause: " << cause.what();
     msg = s.str();
 }
 
 MWParseException::MWParseException(
+        const std::string& error,
+        const std::string& function,
+        const std::string& description) {
+    std::stringstream s;
+    s << error << " @ " << function << ": " << description;
+    msg = s.str();
+}
+
+
+MWParseException::MWParseException(
     const std::string& function,
     const std::string& description):
-    MWParseException { "MWParseException", function, description, nullptr } {
+    MWParseException { "MWParseException", function, description } {
 }
 
 MWParseException::MWParseException(
     const std::string& function,
     const std::string& description,
-    const std::exception& cause_):
+    const std::exception& cause):
     MWParseException { "MWParseException",
         function,
         description,
-        std::make_unique<std::exception>(cause_)} {
+        cause } {
 }
 
 

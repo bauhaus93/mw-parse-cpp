@@ -9,8 +9,7 @@ LoggerException::LoggerException(
     const std::string& description):
     MWParseException { "LoggerException",
                         function,
-                        description,
-                        nullptr } {
+                        description } {
 }
 
 }   // namespace mwparse::log
