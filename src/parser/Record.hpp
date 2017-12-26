@@ -2,6 +2,7 @@
 
 #pragma once
 #include <iostream>
+#include <cstdint>
 
 #include "Entity.hpp"
 #include "EntityType.hpp"
@@ -10,23 +11,7 @@
 
 namespace mwparse::parser {
 
-class Record {
-
- public:
-
-                        Record(std::istream& is);
-    EntityType          GetEntityType() const;
-    Entity              GetEntity() const;
-
- private:
-
-    char                name[5];
-    long                size;
-    long                unknown;
-    long                flags;
-    Entity              entity;
-};
-
+Entity ReadRecord(std::istream& is);
 
 }   // mwparse::parser
 
