@@ -3,17 +3,22 @@
 #include<iostream>
 #include <cstdint>
 
-#include "entity/Entity.hpp"
-#include "entity/EntityType.hpp"
-#include "ParseException.hpp"
+#include "UnexpectedSubrecordType.hpp"
+#include "UnexpectedSubrecordSize.hpp"
 #include "logger/GlobalLogger.hpp"
 #include "Read.hpp"
-
+#include "SubrecordType.hpp"
 
 namespace mwparse::parser {
-    
-entity::Entity ReadSubrecord(std::istream& is);
 
+struct SubrecordHeader {
+    SubrecordType       type;
+    int32_t             size;
 
+                        SubrecordHeader(std::istream& is,
+                                        SubrecordType expectedType,
+                                        int32_t       expectedSize);
+
+};
 
 }   // mwparse::parser

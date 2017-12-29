@@ -6,9 +6,13 @@
 #include <fstream>
 #include <string>
 
+#include "logger/GlobalLogger.hpp"
+#include "entity/TES3Header.hpp"
+
 #include "ParseException.hpp"
 #include "Record.hpp"
-#include "logger/GlobalLogger.hpp"
+#include "RecordType.hpp"
+#include "UnexpectedRecordType.hpp"
 
 namespace mwparse::parser {
 

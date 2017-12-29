@@ -15,7 +15,7 @@ void CreateGlobalLogger(std::ostream& output);
 Logger& GetGlobalLogger();
 void DestroyGlobalLogger();
 
-#define LOG_LEVEL INFO
+#define LOG_LEVEL DEBUG
 
 #if LOG_LEVEL == TRACE
 #define TRACE(args...) mwparse::log::GetGlobalLogger().Trace(args)

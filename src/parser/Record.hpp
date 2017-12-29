@@ -6,17 +6,23 @@
 #include <cstdint>
 #include <memory>
 
-#include "entity/Entity.hpp"
-#include "entity/EntityType.hpp"
-#include "ParseException.hpp"
+#include "parser/ParseException.hpp"
 #include "logger/GlobalLogger.hpp"
 
 #include "Read.hpp"
-#include "ReadTES3.hpp"
+#include "RecordType.hpp"
 
 namespace mwparse::parser {
 
-std::unique_ptr<entity::Entity> ReadRecord(std::istream& is);
+struct RecordHeader {
+
+    RecordType          type;
+    int32_t             size;
+    int32_t             unknown;
+    int32_t             flags; 
+
+                        RecordHeader(std::istream& is);
+};
 
 }   // mwparse::parser
 

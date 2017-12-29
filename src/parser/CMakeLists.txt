@@ -1,8 +1,13 @@
 add_sources(
     ESMParser.cpp
     ParseException.cpp
+    Read.cpp
     Record.cpp
     Subrecord.cpp
-    Read.cpp
-    ReadTES3.cpp
+    RecordType.cpp
+    SubrecordType.cpp
+    UnexpectedRecordSize.cpp
+    UnexpectedRecordType.cpp
+    UnexpectedSubrecordType.cpp
+    UnexpectedSubrecordSize.cpp
 )

@@ -2,24 +2,24 @@
 
 #pragma once
 
+#include <iostream>
 #include <string>
 
-#include "Entity.hpp"
-#include "EntityType.hpp"
+#include "parser/Subrecord.hpp"
+#include "parser/SubrecordType.hpp"
+#include "parser/UnexpectedRecordSize.hpp"
+#include "parser/Read.hpp"
 
 namespace mwparse::entity {
 
-class TES3Header: public Entity {
+class TES3Header {
 
  public:
-            TES3Header();
+                TES3Header(std::istream& is, int32_t size);
 
-            EntityType  GetType() const override;            
-            
-            inline void SetVersion(float version_);
-            inline void SetFiletype(uint32_t filetype_);
-            inline void SetCompanyName(std::string name);
-            inline void SetFileDescription(std::string descr);
+    uint32_t    GetNumRecords() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const TES3Header& tes3); 
 
  private:
 
@@ -27,24 +27,9 @@ class TES3Header: public Entity {
     uint32_t    filetype;
     std::string companyName;
     std::string fileDescription;
+    uint32_t    numRecords;
 
 };
-
-void TES3Header::SetVersion(float version_) {
-    version = version_;
-}
-
-void TES3Header::SetFiletype(uint32_t filetype_) {
-    filetype = filetype_;
-}
-
-void TES3Header::SetCompanyName(std::string name) {
-    companyName = name;
-}
-
-void TES3Header::SetFileDescription(std::string descr) {
-    fileDescription = descr;
-}
 
 }    // mwparse::entity
 

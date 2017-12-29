@@ -5,28 +5,32 @@
 
 namespace mwparse::parser {
 
-entity::Entity ReadSubrecord(std::istream& is) {
-    std::string name;
-    int32_t size = 0;
+SubrecordHeader::SubrecordHeader(std::istream& is,
+                                 SubrecordType expectedType,
+                                 int32_t       expectedSize):
+    type { SubrecordType::UNKNOWN },
+    size { 0 } {
 
     if (is.eof()) {
         throw ParseException("ReadSubrecord", "EOF reached");
     }
 
     try {
-        name = ReadString(is, 4);
+        std::string name = ReadString(is, 4);
+        if (name == "HEDR")
+            type = SubrecordType::HEDR;
         size = Read<int32_t>(is);
+        TRACE("subrecord =", name, ", size = ", size);
     }
     catch (const std::ios_base::failure& e) {
-        throw ParseException("ReadSubrecord", "IO Error", e);
+        throw ParseException(__FUNCTION__, "IO Error", e);
     }
+    
+    if (type != expectedType)
+        throw UnexpectedSubrecordType(__FUNCTION__, type, expectedType);
 
-    INFO("subrecord =", name, ", size = ", size);
-
-    is.seekg(size, std::ios_base::cur);
-
-    return entity::Entity();
-
+    if (size != expectedSize)
+        throw UnexpectedSubrecordSize(__FUNCTION__, size, expectedSize);
 }
 
 }   // mwparse::parser
