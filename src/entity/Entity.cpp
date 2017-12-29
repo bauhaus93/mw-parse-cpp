@@ -2,21 +2,16 @@
 
 #include "Entity.hpp"
 
-namespace mwparse::parser {
+namespace mwparse::entity {
 
 
-Entity::Entity(EntityType type_):
-    type { type_ } {
+Entity::Entity() {
 }
 
 EntityType Entity::GetType() const {
-    return type;
+    return EntityType::UNHANDLED;
 }
 
-
-
-
-
-}   // mwparse::parser
+}   // mwparse::entity
 
 

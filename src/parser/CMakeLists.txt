@@ -2,5 +2,7 @@ add_sources(
     ESMParser.cpp
     ParseException.cpp
     Record.cpp
-    Entity.cpp
+    Subrecord.cpp
+    Read.cpp
+    ReadTES3.cpp
 )

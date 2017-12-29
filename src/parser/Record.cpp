@@ -4,48 +4,37 @@
 
 namespace mwparse::parser {
 
-std::string ReadString(std::istream& is, size_t len);
-int32_t ReadInt32(std::istream& is);
-
-Entity ReadRecord(std::istream& is) {
+std::unique_ptr<entity::Entity> ReadRecord(std::istream& is) {
     std::string name;
-    long size = 0;
-    long unknown = 0;
-    long flags = 0;
+    int32_t size = 0;
+    int32_t unknown = 0;
+    int32_t flags = 0;
 
     if (is.eof()) {
-        throw ParseException("Record::Record", "EOF reached");
+        throw ParseException("ReadRecord", "EOF reached");
     }
 
     try {
         name = ReadString(is, 4);
-        size = ReadInt32(is);
-        unknown = ReadInt32(is);
-        flags = ReadInt32(is); 
+        size = Read<int32_t>(is);
+        unknown = Read<int32_t>(is);
+        flags = Read<int32_t>(is); 
 
     }
     catch (const std::ios_base::failure& e) {
-        throw ParseException("Record::Record", "IO Error", e);
+        throw ParseException("ReadRecord", "IO Error", e);
     }
 
     INFO("record = ", name, ", size = ", size);
-    is.seekg(size, std::ios_base::cur);
     
-    return Entity { EntityType::UNHANDLED };
+    switch(entity::FromString(name)) {
+        case entity::EntityType::TES3:  return ReadTES3(is, size);
+        default:
+            is.seekg(size, std::ios_base::cur);
+            return std::make_unique<entity::Entity>();
+    }
 }
 
-
-std::string ReadString(std::istream& is, size_t len) {
-    std::string s (len + 1, 0);
-    is.read(&s[0], len);
-    return s;
-}
-
-int32_t ReadInt32(std::istream& is) {
-    int32_t value;
-    is.read(reinterpret_cast<char*>(&value), sizeof(int32_t));
-    return value;
-}
 
 }   // mwparse::parser
 
