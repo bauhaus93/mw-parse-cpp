@@ -5,8 +5,8 @@
 #include <cstdint>
 #include <string>
 
-#include "UnexpectedSubrecordType.hpp"
-#include "UnexpectedSubrecordSize.hpp"
+#include "exception/UnexpectedSubrecordType.hpp"
+#include "exception/UnexpectedSubrecordSize.hpp"
 #include "logger/GlobalLogger.hpp"
 #include "Read.hpp"
 #include "SubrecordType.hpp"

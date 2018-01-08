@@ -5,7 +5,7 @@
 #include <exception>
 #include <string>
 
-#include "exception/MWParseException.hpp"
+#include "MWParseException.hpp"
 
 namespace mwparse::log {
 

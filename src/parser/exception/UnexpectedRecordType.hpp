@@ -7,7 +7,7 @@
 #include <exception>
 
 #include "ParseException.hpp"
-#include "RecordType.hpp"
+#include "parser/RecordType.hpp"
 
 namespace mwparse::parser {
 

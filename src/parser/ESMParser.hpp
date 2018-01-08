@@ -9,10 +9,11 @@
 #include "logger/GlobalLogger.hpp"
 #include "entity/TES3Header.hpp"
 
-#include "ParseException.hpp"
+#include "exception/ParseException.hpp"
+#include "exception/UnexpectedRecordType.hpp"
 #include "Record.hpp"
 #include "RecordType.hpp"
-#include "UnexpectedRecordType.hpp"
+
 
 namespace mwparse::parser {
 

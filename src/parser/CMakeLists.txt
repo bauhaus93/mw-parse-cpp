@@ -1,13 +1,10 @@
 add_sources(
     ESMParser.cpp
-    ParseException.cpp
     Read.cpp
     Record.cpp
     Subrecord.cpp
     RecordType.cpp
     SubrecordType.cpp
-    UnexpectedRecordSize.cpp
-    UnexpectedRecordType.cpp
-    UnexpectedSubrecordType.cpp
-    UnexpectedSubrecordSize.cpp
 )
+
+add_subdirectory(exception)

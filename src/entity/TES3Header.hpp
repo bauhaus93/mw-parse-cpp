@@ -7,7 +7,7 @@
 
 #include "parser/Subrecord.hpp"
 #include "parser/SubrecordType.hpp"
-#include "parser/UnexpectedRecordSize.hpp"
+#include "parser/exception/UnexpectedRecordSize.hpp"
 #include "parser/Read.hpp"
 
 namespace mwparse::entity {

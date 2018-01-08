@@ -7,7 +7,7 @@
 #include <memory>
 #include <string>
 
-#include "parser/ParseException.hpp"
+#include "exception/ParseException.hpp"
 #include "logger/GlobalLogger.hpp"
 
 #include "Read.hpp"
