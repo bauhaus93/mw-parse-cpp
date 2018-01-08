@@ -10,7 +10,6 @@ RecordHeader::RecordHeader(std::istream& is):
     size { 0 },
     unknown { 0 },
     flags { 0 } {
-
     if (is.eof()) {
         throw ParseException(__FUNCTION__, "EOF reached");
     }
@@ -22,7 +21,6 @@ RecordHeader::RecordHeader(std::istream& is):
         unknown = Read<int32_t>(is);
         flags = Read<int32_t>(is);
         TRACE("record = ", name, ", size = ", size);
-
     }
     catch (const std::ios_base::failure& e) {
         throw ParseException(__FUNCTION__, "IO Error", e);
@@ -30,5 +28,4 @@ RecordHeader::RecordHeader(std::istream& is):
 }
 
 
-}   // mwparse::parser
-
+}   // namespace mwparse::parser

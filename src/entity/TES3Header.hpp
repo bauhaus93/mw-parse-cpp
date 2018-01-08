@@ -13,24 +13,19 @@
 namespace mwparse::entity {
 
 class TES3Header {
-
  public:
                 TES3Header(std::istream& is, int32_t size);
 
     uint32_t    GetNumRecords() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const TES3Header& tes3); 
+    friend std::ostream& operator<<(std::ostream& os, const TES3Header& tes3);
 
  private:
-
     float       version;
     uint32_t    filetype;
     std::string companyName;
     std::string fileDescription;
     uint32_t    numRecords;
-
 };
 
-}    // mwparse::entity
-
-
+}    // namespace mwparse::entity

@@ -10,7 +10,6 @@ SubrecordHeader::SubrecordHeader(std::istream& is,
                                  int32_t       expectedSize):
     type { SubrecordType::UNKNOWN },
     size { 0 } {
-
     if (is.eof()) {
         throw ParseException("ReadSubrecord", "EOF reached");
     }
@@ -25,7 +24,7 @@ SubrecordHeader::SubrecordHeader(std::istream& is,
     catch (const std::ios_base::failure& e) {
         throw ParseException(__FUNCTION__, "IO Error", e);
     }
-    
+
     if (type != expectedType)
         throw UnexpectedSubrecordType(__FUNCTION__, type, expectedType);
 
@@ -33,6 +32,4 @@ SubrecordHeader::SubrecordHeader(std::istream& is,
         throw UnexpectedSubrecordSize(__FUNCTION__, size, expectedSize);
 }
 
-}   // mwparse::parser
-
-
+}   // namespace mwparse::parser

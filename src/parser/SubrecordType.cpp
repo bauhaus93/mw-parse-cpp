@@ -5,11 +5,11 @@
 namespace mwparse::parser {
 
 std::ostream& operator<<(std::ostream& os, const SubrecordType& t) {
-    switch(t) {
+    switch (t) {
         case SubrecordType::HEDR:       os << "HEDR";           break;
         default:                        os << "UNKNOWN";        break;
     }
     return os;
 }
 
-}
+}   // namespace mwparse::parser

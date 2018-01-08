@@ -46,4 +46,4 @@ std::ostream& operator<<(std::ostream os, const MWParseException& e) {
     return os << e.what();
 }
 
-}   // namespace mwparse::exception 
+}   // namespace mwparse::exception

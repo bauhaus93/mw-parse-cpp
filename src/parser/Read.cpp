@@ -5,9 +5,9 @@
 namespace mwparse::parser {
 
 std::string ReadString(std::istream& is, size_t len) {
-    std::string s (len, 0);
+    std::string s(len, 0);
     is.read(&s[0], len);
     return s;
 }
 
-}   // mwparse::parser
+}   // namespace mwparse::parser

@@ -5,7 +5,6 @@
 namespace mwparse::parser {
 
 RecordType GetRecordTypeFromString(const std::string& str) {
-
     if (str == "TES3")
         return RecordType::TES3;
     else if ( str == "CELL")
@@ -16,7 +15,7 @@ RecordType GetRecordTypeFromString(const std::string& str) {
 
 
 std::ostream& operator<<(std::ostream& os, const RecordType& t) {
-    switch(t) {
+    switch (t) {
         case RecordType::TES3:  os << "TES3";           break;
         case RecordType::CELL:  os << "CELL";           break;
         default:                os << "UNKNOWN";        break;
@@ -24,4 +23,4 @@ std::ostream& operator<<(std::ostream& os, const RecordType& t) {
     return os;
 }
 
-}   // mwparse::parser
+}   // namespace mwparse::parser

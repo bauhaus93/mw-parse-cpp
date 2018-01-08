@@ -10,12 +10,11 @@ TES3Header::TES3Header(std::istream& is, int32_t size):
     companyName { "<Not given>" },
     fileDescription { "<Not given>" },
     numRecords { 0 } {
-
     if (size < 308)
         throw parser::UnexpectedRecordSize(__FUNCTION__, size, 308);
 
     parser::SubrecordHeader sh { is, parser::SubrecordType::HEDR, 300 };
-    
+
     version = parser::Read<float>(is);
     filetype = parser::Read<uint32_t>(is);
     companyName = parser::ReadString(is, 32);
@@ -37,4 +36,4 @@ std::ostream& operator<<(std::ostream& os, const TES3Header& tes3) {
     return os;
 }
 
-}     // mwparse::entity
+}     // namespace mwparse::entity

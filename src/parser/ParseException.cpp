@@ -24,4 +24,4 @@ ParseException::ParseException(const std::string& function,
 
 
 
-}   // namespacemwparse::parser
+}   // namespace mwparse::parser

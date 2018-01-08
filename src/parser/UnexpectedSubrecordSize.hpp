@@ -11,18 +11,11 @@
 namespace mwparse::parser {
 
 class UnexpectedSubrecordSize: public ParseException {
-
  public:
         UnexpectedSubrecordSize(const std::string& function,
                                 int32_t found,
                                 int32_t expected);
- 
- private:
-
-
-}; 
-
+};
 
 
 }   // namespace mwparse::parser
-

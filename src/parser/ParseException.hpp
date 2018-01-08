@@ -10,7 +10,6 @@
 namespace mwparse::parser {
 
 class ParseException: public exception::MWParseException {
-
  public:
         ParseException(const std::string& function,
                        const std::string& description);
@@ -18,13 +17,8 @@ class ParseException: public exception::MWParseException {
         ParseException(const std::string& function,
                        const std::string& description,
                        const std::exception& cause);
-
- private:
-
-
-}; 
+};
 
 
 
 }   // namespace mwparse::parser
-

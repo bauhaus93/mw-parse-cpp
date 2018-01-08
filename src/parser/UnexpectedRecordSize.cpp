@@ -11,7 +11,6 @@ static std::string CreateMsgString(int32_t found, int32_t expected) {
     s << "Unexpected record size: found " << found
       << ", but expected " << expected;
     return s.str();
-
 }
 
 UnexpectedRecordSize::UnexpectedRecordSize(
@@ -23,4 +22,4 @@ UnexpectedRecordSize::UnexpectedRecordSize(
 
 
 
-}    // mwparse::parser
+}    // namespace mwparse::parser

@@ -4,13 +4,13 @@
 
 namespace mwparse::parser {
 
-static std::string CreateMsgString(SubrecordType found, SubrecordType expected) {
+static std::string CreateMsgString(SubrecordType found,
+                                   SubrecordType expected) {
     std::stringstream s;
 
     s << "Unexpected subrecord type: found " << found
       << ", but expected " << expected;
     return s.str();
-
 }
 
 UnexpectedSubrecordType::UnexpectedSubrecordType(
@@ -22,4 +22,4 @@ UnexpectedSubrecordType::UnexpectedSubrecordType(
 
 
 
-}    // mwparse::parser
+}    // namespace mwparse::parser

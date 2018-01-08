@@ -10,7 +10,6 @@ static std::string CreateMsgString(RecordType found, RecordType expected) {
     s << "Unexpected record type: found " << found
       << ", but expected " << expected;
     return s.str();
-
 }
 
 UnexpectedRecordType::UnexpectedRecordType(
@@ -22,4 +21,4 @@ UnexpectedRecordType::UnexpectedRecordType(
 
 
 
-}    // mwparse::parser
+}    // namespace mwparse::parser

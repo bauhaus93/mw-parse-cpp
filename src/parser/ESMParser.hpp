@@ -17,17 +17,13 @@
 namespace mwparse::parser {
 
 class ESMParser {
-
- public:  
-
-                        ESMParser(const std::string& filename);
+ public:
+    explicit            ESMParser(const std::string& filename);
     void                Parse();
 
  private:
     std::ifstream       file;
-
-
 };
 
 
-}   // mwparse::parser
+}   // namespace mwparse::parser

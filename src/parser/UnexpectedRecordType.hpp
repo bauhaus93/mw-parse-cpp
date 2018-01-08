@@ -12,18 +12,10 @@
 namespace mwparse::parser {
 
 class UnexpectedRecordType: public ParseException {
-
  public:
         UnexpectedRecordType(const std::string& function,
                                 RecordType found,
                                 RecordType expected);
- 
- private:
-
-
-}; 
-
-
+};
 
 }   // namespace mwparse::parser
-

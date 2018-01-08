@@ -7,7 +7,7 @@
 
 namespace mwparse::parser {
 
-//assuming little endian byte order (as used in .esm files)
+// assuming little endian byte order (as used in .esm files)
 template<typename T>
 T Read(std::istream& is) {
     T value;
@@ -17,5 +17,4 @@ T Read(std::istream& is) {
 
 std::string ReadString(std::istream& is, size_t len);
 
-}   // mwparser::parser
-
+}   // namespace mwparse::parser

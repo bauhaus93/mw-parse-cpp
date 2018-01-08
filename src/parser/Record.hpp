@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdint>
 #include <memory>
+#include <string>
 
 #include "parser/ParseException.hpp"
 #include "logger/GlobalLogger.hpp"
@@ -15,14 +16,12 @@
 namespace mwparse::parser {
 
 struct RecordHeader {
-
     RecordType          type;
     int32_t             size;
     int32_t             unknown;
-    int32_t             flags; 
+    int32_t             flags;
 
-                        RecordHeader(std::istream& is);
+    explicit            RecordHeader(std::istream& is);
 };
 
-}   // mwparse::parser
-
+}   // namespace mwparse::parser

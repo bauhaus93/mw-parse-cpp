@@ -16,5 +16,4 @@ enum class RecordType {
 RecordType GetRecordTypeFromString(const std::string& str);
 std::ostream& operator<<(std::ostream& os, const RecordType& t);
 
-}   // mwparse::parser
-
+}   // namespace mwparse::parser

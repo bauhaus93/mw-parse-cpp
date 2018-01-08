@@ -14,7 +14,7 @@ class MWParseException : public std::exception {
  private:
     std::string msg;
 
-    friend std::ostream&        operator<<(std::ostream& os, 
+    friend std::ostream&        operator<<(std::ostream& os,
                                            const MWParseException& e);
 
 
