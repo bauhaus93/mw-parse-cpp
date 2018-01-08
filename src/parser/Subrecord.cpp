@@ -11,7 +11,7 @@ SubrecordHeader::SubrecordHeader(std::istream& is,
     type { SubrecordType::UNKNOWN },
     size { 0 } {
     if (is.eof()) {
-        throw ParseException("ReadSubrecord", "EOF reached");
+        throw ParseException(__FUNCTION__, "EOF reached");
     }
 
     try {

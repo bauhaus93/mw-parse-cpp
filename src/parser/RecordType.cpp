@@ -7,7 +7,7 @@ namespace mwparse::parser {
 RecordType GetRecordTypeFromString(const std::string& str) {
     if (str == "TES3")
         return RecordType::TES3;
-    else if ( str == "CELL")
+    else if (str == "CELL")
         return RecordType::CELL;
     else
         return RecordType::UNKNOWN;

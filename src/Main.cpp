@@ -16,7 +16,6 @@ int main(int argc, char** argv) {
 
     try {
         parser = std::make_unique<parser::ESMParser>("Morrowind.esm");
-
         parser->Parse();
     }
     catch (const exception::MWParseException& e) {

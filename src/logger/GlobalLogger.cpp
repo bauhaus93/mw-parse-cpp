@@ -11,7 +11,7 @@ void CreateGlobalLogger(std::ostream& output) {
         g_logger = std::make_unique<Logger>(output, LogLevel::LOG_LEVEL);
     } else {
         throw LoggerException(
-            "CreateGlobalLogger",
+            __FUNCTION__,
             "Global logger already existing");
     }
 }
@@ -20,16 +20,16 @@ Logger& GetGlobalLogger() {
     if (g_logger != nullptr) {
         return *g_logger;
     }
-    throw LoggerException("GetGlobalLogger", "No global logger existing");
+    throw LoggerException(__FUNCTION__,
+                          "No global logger existing");
 }
 
 void DestroyGlobalLogger() {
     if (g_logger != nullptr) {
         g_logger = nullptr;
     } else {
-        throw LoggerException(
-            "DestroyGlobalLogger",
-            "Global logger not existing");
+        throw LoggerException(__FUNCTION__,
+                              "Global logger not existing");
     }
 }
 

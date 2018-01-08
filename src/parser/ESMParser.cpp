@@ -13,7 +13,7 @@ ESMParser::ESMParser(const std::string& filename) :
         file.open(filename, std::ifstream::binary);
     }
     catch (const std::ios_base::failure& e) {
-        throw ParseException("ESMParser::ESMParser", "Could not open file: " +
+        throw ParseException(__FUNCTION__, "Could not open file: " +
                              filename,
                              e);
     }
