@@ -6,3 +6,4 @@ add_sources(
 add_subdirectory(logger)
 add_subdirectory(parser)
 add_subdirectory(entity)
+add_subdirectory(utility)

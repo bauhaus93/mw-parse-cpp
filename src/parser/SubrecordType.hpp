@@ -8,9 +8,14 @@ namespace mwparse::parser {
 
 enum class SubrecordType {
     UNKNOWN,
-    HEDR
+    HEDR,
+    NAME,
+    DATA,
+    RGNN,
+    NAM0
 };
 
+SubrecordType SubrecordTypeFromString(const std::string& s);
 std::ostream& operator<<(std::ostream& os, const SubrecordType& t);
 
 }    // mwparse::parser

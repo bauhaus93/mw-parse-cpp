@@ -20,6 +20,8 @@ struct SubrecordHeader {
                         SubrecordHeader(std::istream& is,
                                         SubrecordType expectedType,
                                         int32_t       expectedSize);
+                        SubrecordHeader(std::istream& is,
+                                        SubrecordType expectedType);
 };
 
 }   // namespace mwparse::parser

@@ -18,8 +18,8 @@ class TES3Header {
 
     uint32_t    GetNumRecords() const;
 
-    friend std::ostream& operator<<(std::ostream& os, const TES3Header& tes3);
-
+    friend std::ostream&    operator<<(std::ostream& os,
+                                       const TES3Header& tes3);
  private:
     float       version;
     uint32_t    filetype;
