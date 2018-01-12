@@ -4,22 +4,32 @@
 
 namespace mwparse::entity {
 
-TES3Header::TES3Header(std::istream& is, int32_t size):
+TES3Header::TES3Header():
     version { 0.0 },
     filetype { 0 },
     companyName { "<Not given>" },
     fileDescription { "<Not given>" },
     numRecords { 0 } {
-    if (size < 308)
-        throw parser::UnexpectedRecordSize(__FUNCTION__, size, 308);
+}
 
-    parser::SubrecordHeader sh { is, parser::SubrecordType::HEDR, 300 };
+void TES3Header::SetVersion(float _version) {
+    version = _version;
+}
 
-    version = parser::Read<float>(is);
-    filetype = parser::Read<uint32_t>(is);
-    companyName = parser::ReadString(is, 32);
-    fileDescription = parser::ReadString(is, 256);
-    numRecords = parser::Read<uint32_t>(is);
+void TES3Header::SetFileType(uint32_t _filetype) {
+    filetype = _filetype;
+}
+
+void TES3Header::SetCompanyName(std::string _companyName) {
+    companyName = _companyName;
+}
+
+void TES3Header::SetFileDescription(std::string _fileDescription) {
+    fileDescription = _fileDescription;
+}
+
+void TES3Header::SetNumRecords(uint32_t _numRecords) {
+    numRecords = _numRecords;
 }
 
 uint32_t TES3Header::GetNumRecords() const {

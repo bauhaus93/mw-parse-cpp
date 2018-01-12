@@ -12,7 +12,9 @@ enum class SubrecordType {
     NAME,
     DATA,
     RGNN,
-    NAM0
+    NAM0,
+    WHGT,
+    AMBI
 };
 
 SubrecordType SubrecordTypeFromString(const std::string& s);

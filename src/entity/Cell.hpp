@@ -7,19 +7,22 @@
 
 #include "utility/Point2D.hpp"
 
-#include "parser/Subrecord.hpp"
-#include "parser/SubrecordType.hpp"
-#include "parser/exception/UnexpectedRecordSize.hpp"
-#include "parser/Read.hpp"
-
 namespace mwparse::entity {
 
 class Cell {
  public:
-                            Cell(std::istream& is, int32_t size);
+                            Cell();
+    virtual                 ~Cell() = default;
 
+    const std::string&      GetName() const;
+    uint32_t                GetFlags() const;
+    const Point2D<int32_t>& GetGridPos() const;
+    const std::string&      GetRegionName() const;
 
-    friend std::ostream&    operator<<(std::ostream& os, const Cell& cell);
+    void                    SetName(const std::string& _name);
+    void                    SetFlags(uint32_t _flags);
+    void                    SetGridPos(Point2D<int32_t> _gridPos);
+    void                    SetRegionName(const std::string& _regionName);
 
  private:
     std::string         name;
@@ -29,5 +32,6 @@ class Cell {
 
 };
 
+std::ostream& operator<<(std::ostream& os, const Cell& cell);
 
 }   // namespace mwparse::entity

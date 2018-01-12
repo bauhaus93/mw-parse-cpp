@@ -25,10 +25,10 @@ void ESMParser::Parse() {
         throw UnexpectedRecordType(__FUNCTION__, rh.type, RecordType::TES3);
     }
 
-    entity::TES3Header tes3 { file, rh.size };
-    INFO(tes3);
+    auto tes3 = ReadTES3Header(file, rh.size);
+    INFO(*tes3);
 
-    for (uint32_t i = 0; i < tes3.GetNumRecords(); i++) {
+    for (uint32_t i = 0; i < tes3->GetNumRecords(); i++) {
         if (i % 1000 == 0)
             DEBUG("Record count: ", i);
         try {

@@ -15,6 +15,6 @@ T Read(std::istream& is) {
     return value;
 }
 
-std::string ReadString(std::istream& is, size_t len);
+std::string ReadString(std::istream& is, uint32_t size);
 
 }   // namespace mwparse::parser

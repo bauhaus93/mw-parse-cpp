@@ -15,6 +15,10 @@ SubrecordType SubrecordTypeFromString(const std::string& s) {
         return SubrecordType::RGNN;
     if (s == "NAM0")
         return SubrecordType::NAM0;
+    if (s == "WHGT")
+        return SubrecordType::WHGT;
+    if (s == "AMBI")
+        return SubrecordType::AMBI;
     return SubrecordType::UNKNOWN;
 }
 
@@ -25,6 +29,8 @@ std::ostream& operator<<(std::ostream& os, const SubrecordType& t) {
         case SubrecordType::DATA:       os << "DATA";       break;
         case SubrecordType::RGNN:       os << "RGNN";       break;
         case SubrecordType::NAM0:       os << "NAM0";       break;
+        case SubrecordType::WHGT:       os << "WHGT";       break;
+        case SubrecordType::AMBI:       os << "AMBI";       break;
         default:                        os << "UNKNOWN";    break;
     }
     return os;

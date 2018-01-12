@@ -5,16 +5,18 @@
 #include <iostream>
 #include <string>
 
-#include "parser/Subrecord.hpp"
-#include "parser/SubrecordType.hpp"
-#include "parser/exception/UnexpectedRecordSize.hpp"
-#include "parser/Read.hpp"
 
 namespace mwparse::entity {
 
 class TES3Header {
  public:
-                TES3Header(std::istream& is, int32_t size);
+                TES3Header();
+
+    void        SetVersion(float _version);
+    void        SetFileType(uint32_t _filetype);
+    void        SetCompanyName(std::string _companyName);
+    void        SetFileDescription(std::string _fileDescription);
+    void        SetNumRecords(uint32_t _numRecords);
 
     uint32_t    GetNumRecords() const;
 

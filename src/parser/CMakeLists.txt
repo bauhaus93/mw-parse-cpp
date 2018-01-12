@@ -1,6 +1,8 @@
 add_sources(
     ESMParser.cpp
     Read.cpp
+    ReadTES3Header.cpp
+    ReadCell.cpp
     Record.cpp
     Subrecord.cpp
     RecordType.cpp

@@ -13,6 +13,8 @@
 #include "exception/UnexpectedRecordType.hpp"
 #include "Record.hpp"
 #include "RecordType.hpp"
+#include "ReadTES3Header.hpp"
+#include "ReadCell.hpp"
 
 
 namespace mwparse::parser {
