@@ -1,5 +1,6 @@
 add_sources(
     ESMParser.cpp
+    Reader.cpp
     Read.cpp
     ReadTES3Header.cpp
     ReadCell.cpp
